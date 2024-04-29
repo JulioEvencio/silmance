@@ -1,14 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhhb800i2scdf"]
+[gd_scene load_steps=4 format=3 uid="uid://bhhb800i2scdf"]
 
 [ext_resource type="Script" path="res://scripts/entities/player.gd" id="1_rrpph"]
+[ext_resource type="Texture2D" uid="uid://bvyp3w3bkg08x" path="res://assets/2D/textures/flash_light/flash_light.png" id="2_avaj2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m46mr"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rrpph")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71567, 0)
+
+[node name="Hand" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49776, 0)
+
+[node name="FlashLight" type="SpotLight3D" parent="Hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36, 0, 0.34)
+light_color = Color(0.72549, 1, 1, 1)
+light_volumetric_fog_energy = 16.0
+light_projector = ExtResource("2_avaj2")
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
