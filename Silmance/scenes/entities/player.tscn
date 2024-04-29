@@ -17,7 +17,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71567, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49776, 0)
 
 [node name="FlashLight" type="SpotLight3D" parent="Hand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36, 0, 0.34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353724, 0, 0)
 light_color = Color(0.72549, 1, 1, 1)
 light_volumetric_fog_energy = 16.0
 light_projector = ExtResource("2_avaj2")

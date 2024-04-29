@@ -1,4 +1,4 @@
-Link:
+Open Game Art:
 https://opengameart.org/content/flashlight-pattern-incandescent
 
 License:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://blo75upsdnx85"]
+[gd_scene load_steps=7 format=3 uid="uid://blo75upsdnx85"]
 
 [ext_resource type="PackedScene" uid="uid://bhhb800i2scdf" path="res://scenes/entities/player.tscn" id="1_k2iqs"]
 [ext_resource type="Script" path="res://scripts/scenarios/scenario_test.gd" id="1_ubx3s"]
+[ext_resource type="PackedScene" uid="uid://b6os83oqmurwh" path="res://scenes/constructions/house.tscn" id="3_5gik1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2764g"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -19,90 +20,12 @@ glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.16
 
-[sub_resource type="BoxMesh" id="BoxMesh_t24e5"]
-size = Vector3(20, 1, 20)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cx5l2"]
-data = PackedVector3Array(-10, 0.5, 10, 10, 0.5, 10, -10, -0.5, 10, 10, 0.5, 10, 10, -0.5, 10, -10, -0.5, 10, 10, 0.5, -10, -10, 0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5, -10, 10, -0.5, -10, 10, 0.5, 10, 10, 0.5, -10, 10, -0.5, 10, 10, 0.5, -10, 10, -0.5, -10, 10, -0.5, 10, -10, 0.5, -10, -10, 0.5, 10, -10, -0.5, -10, -10, 0.5, 10, -10, -0.5, 10, -10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, 10, 0.5, -10, -10, 0.5, 10, -10, 0.5, -10, 10, 0.5, -10, -10, -0.5, 10, 10, -0.5, 10, -10, -0.5, -10, 10, -0.5, 10, 10, -0.5, -10, -10, -0.5, -10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2v78r"]
-albedo_color = Color(0.826814, 0.666537, 0.0983564, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_a3rri"]
-material = SubResource("StandardMaterial3D_2v78r")
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_22t5r"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
 [node name="ScenarioTest" type="Node"]
 script = ExtResource("1_ubx3s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kg2w3")
 
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-
-[node name="Floor" type="MeshInstance3D" parent="Node3D"]
-mesh = SubResource("BoxMesh_t24e5")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Floor/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_cx5l2")
-
-[node name="Floor2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.683592, -9.28504)
-mesh = SubResource("BoxMesh_t24e5")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Floor2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Floor2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_cx5l2")
-
-[node name="Box" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -4)
-mesh = SubResource("BoxMesh_a3rri")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Box"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Box/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_22t5r")
-
-[node name="Box2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 5)
-mesh = SubResource("BoxMesh_a3rri")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Box2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Box2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_22t5r")
-
-[node name="Box3" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -2)
-mesh = SubResource("BoxMesh_a3rri")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Box3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Box3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_22t5r")
-
-[node name="Box4" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 6)
-mesh = SubResource("BoxMesh_a3rri")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Box4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Box4/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_22t5r")
-
-[node name="Box5" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
-mesh = SubResource("BoxMesh_a3rri")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Box5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Box5/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_22t5r")
-
 [node name="Player" parent="." instance=ExtResource("1_k2iqs")]
+
+[node name="House" parent="." instance=ExtResource("3_5gik1")]

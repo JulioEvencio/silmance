@@ -24,6 +24,12 @@ func _input(event : InputEvent) -> void:
 		_head_y_axis += event.relative.x * _camera_sensitivity
 		_camera_x_axis += event.relative.y * _camera_sensitivity
 		_camera_x_axis = clamp(_camera_x_axis, -90.0, 90.0)
+	elif event is InputEventKey:
+		if Input.is_action_just_pressed("toggle_flash_light"):
+			if _flash_light.visible:
+				_flash_light.hide()
+			else:
+				_flash_light.show()
 
 func _process(delta : float) -> void:
 	_direction = Input.get_axis("move_left", "move_right") * _head.basis.x + Input.get_axis("move_up", "move_down") * _head.basis.z
