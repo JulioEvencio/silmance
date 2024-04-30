@@ -1,0 +1,86 @@
+[gd_scene load_steps=17 format=3 uid="uid://debsqdn4ikan2"]
+
+[ext_resource type="Texture2D" uid="uid://b4o75oomk0s6m" path="res://assets/2D/textures/Paint_wall_seamless.png" id="1_gvac3"]
+[ext_resource type="Texture2D" uid="uid://cikc7ijf0x5sc" path="res://assets/2D/textures/Mud_overgroun.png" id="2_3baqu"]
+[ext_resource type="Texture2D" uid="uid://bn87q38n2fcfh" path="res://assets/2D/textures/Carpet_grey_tiled_simple.png" id="3_3u5k0"]
+[ext_resource type="Texture2D" uid="uid://cmvpl0l6sn8cp" path="res://assets/2D/textures/Paint_wall_seamless_2.png" id="4_qhsjl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1bda"]
+albedo_texture = ExtResource("1_gvac3")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_2rchu"]
+material = SubResource("StandardMaterial3D_b1bda")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dpfc3"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kysi"]
+albedo_texture = ExtResource("2_3baqu")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5fcnl"]
+material = SubResource("StandardMaterial3D_5kysi")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l2ff5"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dv35o"]
+albedo_texture = ExtResource("3_3u5k0")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_rl41r"]
+material = SubResource("StandardMaterial3D_dv35o")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f5wv5"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trw3v"]
+albedo_texture = ExtResource("4_qhsjl")
+
+[sub_resource type="BoxMesh" id="BoxMesh_llngk"]
+material = SubResource("StandardMaterial3D_trw3v")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_itvgo"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Blocks" type="Node3D"]
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2rchu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Roof"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_dpfc3")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5fcnl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l2ff5")
+
+[node name="Carpet" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_rl41r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Carpet"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Carpet/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_f5wv5")
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_llngk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_itvgo")
