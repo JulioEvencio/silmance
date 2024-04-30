@@ -17,7 +17,6 @@ background_energy_multiplier = 0.0
 sky = SubResource("Sky_x8qvs")
 tonemap_mode = 2
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.16
 
 [node name="ScenarioTest" type="Node"]
 script = ExtResource("1_ubx3s")
