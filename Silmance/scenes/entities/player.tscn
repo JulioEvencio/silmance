@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bvyp3w3bkg08x" path="res://assets/2D/textures/flash_light.png" id="2_avaj2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m46mr"]
-radius = 0.3
-height = 2.33955
+radius = 0.2
+height = 1.8
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rrpph")
