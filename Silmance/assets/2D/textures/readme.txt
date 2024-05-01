@@ -1,5 +1,5 @@
-Open Game Art:
-https://opengameart.org/content/oldschool-seamless-textures
+Links:
+https://ambientcg.com/
 https://opengameart.org/content/flashlight-pattern-incandescent
 
 License:
