@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5nhm76lrfmj8"]
+
+[ext_resource type="MeshLibrary" uid="uid://dq6uhch3ycinh" path="res://library/furnitures/furnitures_library.tres" id="1_6514b"]
+
+[node name="FurnituresGridMap" type="GridMap"]
+mesh_library = ExtResource("1_6514b")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
