@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dul3a01x58m5y"
+path.s3tc="res://.godot/imported/tv_glass_metalness-glass_roughness.png-17dc44640516a84efa358bb0aac365bc.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "1c1b2d65673bd125fb489b35557f3c78"
+}
+
+[deps]
+
+source_file="res://assets/3D/furnitures/tv/tv_glass_metalness-glass_roughness.png"
+dest_files=["res://.godot/imported/tv_glass_metalness-glass_roughness.png-17dc44640516a84efa358bb0aac365bc.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
