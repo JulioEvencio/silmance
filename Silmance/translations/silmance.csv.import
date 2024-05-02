@@ -2,14 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
-uid="uid://dubiau0jvnd1r"
+uid="uid://m704cb23b3bf"
 
 [deps]
 
-files=["res://translations/silmance.en.translation", "res://translations/silmance.pt_BR.translation", "res://translations/silmance.es.translation"]
+files=["res://translations/silmance.en.translation", "res://translations/silmance.pt.translation", "res://translations/silmance.es.translation"]
 
 source_file="res://translations/silmance.csv"
-dest_files=["res://translations/silmance.en.translation", "res://translations/silmance.pt_BR.translation", "res://translations/silmance.es.translation"]
+dest_files=["res://translations/silmance.en.translation", "res://translations/silmance.pt.translation", "res://translations/silmance.es.translation"]
 
 [params]
 

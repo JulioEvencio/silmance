@@ -73,7 +73,7 @@ interact={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translations/silmance.en.translation", "res://translations/silmance.es.translation", "res://translations/silmance.pt_BR.translation")
+locale/translations=PackedStringArray("res://translations/silmance.en.translation", "res://translations/silmance.es.translation", "res://translations/silmance.pt.translation")
 
 [layer_names]
 

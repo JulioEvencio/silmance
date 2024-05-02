@@ -1,5 +1,19 @@
-,en,pt_BR,es
+,en,pt,es
 $_START,Start,Jogar,Jugar
 $_SETTINGS,Settings,Configurações,Ajustes
 $_CREDITS,Credits,Créditos,Créditos
 $_QUIT,Quit,Sair,Salir
+$_CREDITS_INFO,"Developed by
+Júlio Igreja
+
+Textures:
+https://ambientcg.com","Desenvolvido por
+Júlio Igreja
+
+Texturas:
+https://ambientcg.com","Desarrollado por
+Júlio Igreja
+
+Texturas:
+https://ambientcg.com"
+$_BACK,Back,Voltar,Volver

@@ -11,7 +11,8 @@ func _quit() -> void:
 	get_tree().quit()
 
 func _game_over() -> void:
-	get_tree().reload_current_scene()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene_to_file("res://scenes/screens/menu.tscn")
 
 func _on_enemy_gamer_over():
 	Transition.start(func(): _game_over())
