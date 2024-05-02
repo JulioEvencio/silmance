@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ndeawpoum3ub"]
+
+[ext_resource type="Script" path="res://scripts/entities/princess.gd" id="1_a2qev"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7hnvu"]
+radius = 0.2
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2wn0"]
+albedo_color = Color(0.784314, 0.580392, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_60egy"]
+material = SubResource("StandardMaterial3D_i2wn0")
+radius = 0.2
+height = 1.6
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pjfe0"]
+radius = 2.0
+
+[node name="Princess" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 8
+script = ExtResource("1_a2qev")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7hnvu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_60egy")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_pjfe0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

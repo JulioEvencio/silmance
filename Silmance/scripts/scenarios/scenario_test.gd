@@ -1,6 +1,6 @@
 extends Node
 
-@onready var player : Player = get_node("Player")
+@onready var player : Player = get_node("Node3D/Entities/Player")
 
 func _ready() -> void:
 	# Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

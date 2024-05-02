@@ -8,3 +8,4 @@ cell_size = Vector3(1, 1, 1)
 cell_center_x = false
 cell_center_y = false
 cell_center_z = false
+collision_mask = 0
