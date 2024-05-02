@@ -11,15 +11,22 @@ config_version=5
 [application]
 
 config/name="Silmance"
-run/main_scene="res://scenes/scenarios/scenario_test.tscn"
+run/main_scene="res://scenes/transitions/boot_splash.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+Transition="*res://scenes/transitions/transition.tscn"
+
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [input]
 

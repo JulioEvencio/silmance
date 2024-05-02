@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var _animation_player : AnimationPlayer
+@onready var _animation_player : AnimationPlayer = get_node("AnimationPlayer")
 
 var _lambda : Callable
 

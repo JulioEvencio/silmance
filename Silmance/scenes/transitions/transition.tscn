@@ -54,9 +54,8 @@ _data = {
 "fade_out": SubResource("Animation_y0a7w")
 }
 
-[node name="Transition" type="CanvasLayer" node_paths=PackedStringArray("_animation_player")]
+[node name="Transition" type="CanvasLayer"]
 script = ExtResource("1_14ofr")
-_animation_player = NodePath("AnimationPlayer")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
