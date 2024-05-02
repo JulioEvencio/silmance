@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dubiau0jvnd1r"
+
+[deps]
+
+files=["res://translations/silmance.en.translation", "res://translations/silmance.pt_BR.translation", "res://translations/silmance.es.translation"]
+
+source_file="res://translations/silmance.csv"
+dest_files=["res://translations/silmance.en.translation", "res://translations/silmance.pt_BR.translation", "res://translations/silmance.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -75,7 +75,7 @@ player = NodePath("../Player")
 curve = SubResource("Curve3D_40hu5")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Entities/Path3D"]
-transform = Transform3D(-0.00673389, 0, -0.999977, 0, 1, 0, 0.999977, 0, -0.00673389, -11.4386, 0, -21.0308)
+transform = Transform3D(-0.00673055, 0, -0.999977, 0, 1, 0, 0.999977, 0, -0.00673055, -11.4386, 0, -21.0308)
 
 [node name="Enemy" parent="Node3D/Entities/Path3D/PathFollow3D" node_paths=PackedStringArray("_path_follow_3d") instance=ExtResource("7_4tt54")]
 _path_follow_3d = NodePath("..")
