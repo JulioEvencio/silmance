@@ -10,8 +10,8 @@ class_name Player
 
 var _head_y_axis : float = 0.0
 var _camera_x_axis : float = 0.0
-var _camera_sensitivity : float = 0.25
-var _camera_acceleration : float = 5.0
+var _camera_sensitivity : float = Save.data.camera_sensitivity / 100
+const _camera_acceleration : float = 5.0
 
 var _player_speed : float = 8.0
 var _player_acceleration : float = 5.0

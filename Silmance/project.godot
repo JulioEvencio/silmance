@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Transition="*res://scenes/transitions/transition.tscn"
+Save="*res://scripts/saves/save.gd"
 
 [display]
 
