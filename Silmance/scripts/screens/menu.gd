@@ -4,7 +4,7 @@ func _start() -> void:
 	get_tree().change_scene_to_file("res://scenes/scenarios/scenario_test.tscn")
 
 func _settings() -> void:
-	pass
+	get_tree().change_scene_to_file("res://scenes/screens/settings.tscn")
 
 func _credits() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/credits.tscn")
