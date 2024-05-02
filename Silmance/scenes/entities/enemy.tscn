@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bghk1rcb2ss3o"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemy.gd" id="1_t877v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ee5an"]
+radius = 0.2
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ini1y"]
+albedo_color = Color(0.65098, 0.184314, 0.176471, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2sg5n"]
+material = SubResource("StandardMaterial3D_ini1y")
+radius = 0.2
+height = 1.6
+
+[node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+collision_layer = 4
+script = ExtResource("1_t877v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ee5an")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_2sg5n")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+light_color = Color(0.72549, 1, 1, 1)
+light_volumetric_fog_energy = 16.0
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 20.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SpotLight3D"]
+shadow_enabled = true
+spot_range = 20.0
+spot_angle = 15.0
