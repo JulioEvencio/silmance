@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Princess
 
 @export var player : Player
 

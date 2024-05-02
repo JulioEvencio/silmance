@@ -3,7 +3,6 @@ extends Node
 @onready var player : Player = get_node("Node3D/Entities/Player")
 
 func _ready() -> void:
-	# Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(_event : InputEvent) -> void:
