@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://bghk1rcb2ss3o"]
 
-[ext_resource type="Script" path="res://scripts/entities/enemy.gd" id="1_t877v"]
+[ext_resource type="Script" path="res://scripts/entities/silmance.gd" id="1_t877v"]
 [ext_resource type="Texture2D" uid="uid://c81kej7wsbabc" path="res://assets/3D/characters/silmance/silmance_body.jpg" id="2_4kw5p"]
 [ext_resource type="Texture2D" uid="uid://c7o2kfenjky70" path="res://assets/3D/characters/silmance/silmance_shirt.jpg" id="3_55ujt"]
 [ext_resource type="Texture2D" uid="uid://c8cs20vbgfqk" path="res://assets/3D/characters/silmance/silmance_shirt_roughness.png" id="4_usjpb"]
@@ -519,7 +519,7 @@ _data = {
 "run": SubResource("Animation_84g5g")
 }
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Silmance" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 collision_layer = 4
 script = ExtResource("1_t877v")
@@ -532,7 +532,7 @@ target_position = Vector3(0, 0, -20)
 collision_mask = 2
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.330918, 0.039579, -0.148421)
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.265588, 0.05547, -0.339113)
 light_color = Color(0.72549, 1, 1, 1)
 light_volumetric_fog_energy = 16.0
 shadow_enabled = true
@@ -545,6 +545,7 @@ spot_range = 20.0
 spot_angle = 15.0
 
 [node name="silmance" type="Node3D" parent="."]
+transform = Transform3D(-0.7, 0, -1.05697e-07, 0, 0.7, 0, 1.05697e-07, 0, -0.7, 0, -0.78116, 0)
 
 [node name="Armature" type="Node3D" parent="silmance"]
 

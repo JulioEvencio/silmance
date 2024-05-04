@@ -1,5 +1,5 @@
 extends CharacterBody3D
-class_name Enemy
+class_name Silmance
 
 signal gamer_over
 
@@ -7,7 +7,7 @@ signal gamer_over
 
 @onready var _ray_cast_3d : RayCast3D = get_node("RayCast3D")
 
-const _SPEED : float = 3.0
+const _SPEED : float = 1.0
 
 var _gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
