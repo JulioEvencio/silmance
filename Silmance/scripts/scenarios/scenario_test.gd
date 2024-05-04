@@ -5,7 +5,7 @@ func _ready() -> void:
 
 func _unhandled_input(_event : InputEvent) -> void:
 	if Input.is_action_just_pressed("escape"):
-		Transition.start(func(): _quit())
+		call_deferred("_quit")
 
 func _quit() -> void:
 	get_tree().quit()
@@ -15,4 +15,5 @@ func _game_over() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/menu.tscn")
 
 func _on_enemy_gamer_over():
-	Transition.start(func(): _game_over())
+	# Transition.start(func(): _game_over())
+	pass
