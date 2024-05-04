@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4ecirj7cl07n"
+uid="uid://bs00te1rao12c"
 path.s3tc="res://.godot/imported/office_desk_office_desk_support_normal.jpg-7974b1125bc1b9e518db3a79b14cac73.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6db6bf2bcdb9946228a229ec5f99dbbc"
+"md5": "94e6d0b6c04106bb35eb5340398459ba"
 }
 
 [deps]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bapj2ldggd4mt"]
+
+[ext_resource type="MeshLibrary" uid="uid://dvfmypnoomkym" path="res://library/furnitures/furnitures_library.tres" id="1_vlnrn"]
+
+[node name="Furnitures" type="GridMap"]
+mesh_library = ExtResource("1_vlnrn")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+collision_mask = 0

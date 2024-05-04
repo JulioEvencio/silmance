@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://iayyenw7tkyj"]
+
+[ext_resource type="MeshLibrary" uid="uid://sf016ev8au36" path="res://library/structures/structures_library.tres" id="1_610be"]
+
+[node name="Structures" type="GridMap"]
+mesh_library = ExtResource("1_610be")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+collision_mask = 0

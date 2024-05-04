@@ -3,6 +3,7 @@ class_name Princess
 
 @export var player : Player
 
+@onready var _animation_player : AnimationPlayer = get_node("girl/AnimationPlayer")
 @onready var navigation_agent_3D : NavigationAgent3D = get_node("NavigationAgent3D")
 
 const _SPEED = 5.0
@@ -16,7 +17,10 @@ func _physics_process(delta : float) -> void:
 	_apply_gravity(delta)
 	
 	if _can_follow and _can_run:
+		_animation_player.play("walk")
 		_to_move()
+	else:
+		_animation_player.play("idle")
 	
 	move_and_slide()
 
