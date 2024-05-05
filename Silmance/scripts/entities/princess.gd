@@ -19,8 +19,8 @@ func _physics_process(delta : float) -> void:
 	if _can_follow_player and _can_run and _last_position != global_position:
 		_animation_player.play("walk")
 		
-		_to_move()
 		_look_at_player(delta)
+		_to_move()
 	else:
 		_animation_player.play("idle")
 	
@@ -44,6 +44,7 @@ func _to_move() -> void:
 		velocity.z = move_toward(velocity.z, 0, _SPEED)
 
 func to_follow_player() -> void:
+	look_at(player.global_position, Vector3.UP, true)
 	_can_follow_player = true
 
 func _look_at_player(delta : float) -> void:
