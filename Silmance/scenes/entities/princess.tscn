@@ -458,12 +458,12 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_pjfe0")
 
-[node name="girl" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.800331, 0)
+[node name="Girl" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.800331, 0)
 
-[node name="Armature" type="Node3D" parent="girl"]
+[node name="Armature" type="Node3D" parent="Girl"]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="girl/Armature"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Girl/Armature"]
 bones/0/name = "LowerSpine"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.589646, 0)
@@ -504,7 +504,7 @@ bones/5/parent = 2
 bones/5/rest = Transform3D(-0.771373, 0.636383, -5.72883e-08, -0.636383, -0.771373, -1.81622e-07, -1.59772e-07, -1.03641e-07, 1, 0.112984, 0.13025, -6.72107e-09)
 bones/5/enabled = true
 bones/5/position = Vector3(0.112984, 0.13025, -6.72107e-09)
-bones/5/rotation = Quaternion(-5.34318e-08, -7.73158e-08, 0.960719, -0.277522)
+bones/5/rotation = Quaternion(-5.34318e-08, -7.73159e-08, 0.960719, -0.277522)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "L.LowerArm"
 bones/6/parent = 5
@@ -588,7 +588,7 @@ bones/17/parent = 0
 bones/17/rest = Transform3D(-2.26498e-06, -6.07967e-06, 0.999996, -0.262894, -0.964825, -6.45218e-06, 0.964825, -0.262894, 5.96044e-07, -0.091144, -0.012372, 0.0149486)
 bones/17/enabled = true
 bones/17/position = Vector3(-0.091144, -0.012372, 0.0149486)
-bones/17/rotation = Quaternion(0.700861, -0.0937775, 0.700862, -0.093773)
+bones/17/rotation = Quaternion(0.700861, -0.0937774, 0.700862, -0.093773)
 bones/17/scale = Vector3(1, 1, 0.999996)
 bones/18/name = "R.LowerLeg"
 bones/18/parent = 17
@@ -612,15 +612,16 @@ bones/20/position = Vector3(1.22873e-09, 0.0857443, -1.84888e-08)
 bones/20/rotation = Quaternion(2.87186e-06, 7.55044e-05, -0.014808, 0.99989)
 bones/20/scale = Vector3(1, 1, 1)
 
-[node name="Girl" type="MeshInstance3D" parent="girl/Armature/Skeleton3D"]
+[node name="Girl" type="MeshInstance3D" parent="Girl/Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_kn66m")
 skin = SubResource("Skin_vafpk")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="girl"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Girl"]
 libraries = {
 "": SubResource("AnimationLibrary_uh11t")
 }
 autoplay = "idle"
+playback_default_blend_time = 5.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

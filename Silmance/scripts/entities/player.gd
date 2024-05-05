@@ -43,7 +43,7 @@ func _toggle_flash_light() -> void:
 	_flash_light.visible = false if _flash_light.visible else true
 
 func _call_princess() -> void:
-	_ray_cast.get_collider().to_follow()
+	_ray_cast.get_collider().to_follow_player()
 
 func _camera_motion_sleep(delta : float) -> void:
 	_head.rotation.y = lerp(_head.rotation.y, -deg_to_rad(_head_y_axis), _camera_acceleration * delta)
