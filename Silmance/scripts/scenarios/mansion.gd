@@ -24,7 +24,7 @@ func _victory() -> void:
 
 func _game_over() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_tree().change_scene_to_file("res://scenes/screens/menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/screens/game_over.tscn")
 
 func _spawn_princess(x : float, z : float) -> void:
 	if _princess_can_spawn:
