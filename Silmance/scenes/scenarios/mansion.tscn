@@ -151,8 +151,8 @@ curve = SubResource("Curve3D_whd22")
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Entities/Enemies/PathLeft"]
 transform = Transform3D(-0.00688122, 0, -0.999976, 0, 1, 0, 0.999976, 0, -0.00688122, -27.1347, 0, -35.826)
 
-[node name="Silmance" parent="Node3D/Entities/Enemies/PathLeft/PathFollow3D" node_paths=PackedStringArray("_path_follow_3d") instance=ExtResource("7_vgyar")]
-_path_follow_3d = NodePath("..")
+[node name="Silmance" parent="Node3D/Entities/Enemies/PathLeft/PathFollow3D" node_paths=PackedStringArray("path_follow_3d") instance=ExtResource("7_vgyar")]
+path_follow_3d = NodePath("..")
 
 [node name="PathRightTop" type="Path3D" parent="Node3D/Entities/Enemies"]
 curve = SubResource("Curve3D_3d2la")
@@ -160,8 +160,8 @@ curve = SubResource("Curve3D_3d2la")
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Entities/Enemies/PathRightTop"]
 transform = Transform3D(0.00478512, 0, 0.999989, 0, 1, 0, -0.999989, 0, 0.00478512, 22.5641, 0, -27.7318)
 
-[node name="Silmance" parent="Node3D/Entities/Enemies/PathRightTop/PathFollow3D" node_paths=PackedStringArray("_path_follow_3d") instance=ExtResource("7_vgyar")]
-_path_follow_3d = NodePath("..")
+[node name="Silmance" parent="Node3D/Entities/Enemies/PathRightTop/PathFollow3D" node_paths=PackedStringArray("path_follow_3d") instance=ExtResource("7_vgyar")]
+path_follow_3d = NodePath("..")
 
 [node name="PathRightLower" type="Path3D" parent="Node3D/Entities/Enemies"]
 curve = SubResource("Curve3D_fkek4")
@@ -169,8 +169,8 @@ curve = SubResource("Curve3D_fkek4")
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Entities/Enemies/PathRightLower"]
 transform = Transform3D(0.999035, 0, 0.0439047, 0, 1, 0, -0.0439047, 0, 0.999035, 15.4962, 0, -4.54136)
 
-[node name="Silmance" parent="Node3D/Entities/Enemies/PathRightLower/PathFollow3D" node_paths=PackedStringArray("_path_follow_3d") instance=ExtResource("7_vgyar")]
-_path_follow_3d = NodePath("..")
+[node name="Silmance" parent="Node3D/Entities/Enemies/PathRightLower/PathFollow3D" node_paths=PackedStringArray("path_follow_3d") instance=ExtResource("7_vgyar")]
+path_follow_3d = NodePath("..")
 
 [node name="Detections" type="Node3D" parent="Node3D"]
 

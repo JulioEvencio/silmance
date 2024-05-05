@@ -3,7 +3,7 @@ class_name Silmance
 
 signal gamer_over
 
-@export var _path_follow_3d : PathFollow3D
+@export var path_follow_3d : PathFollow3D
 
 @onready var _ray_cast_3d_center : RayCast3D = get_node("RayCast3DCenter")
 @onready var _ray_cast_3d_right : RayCast3D = get_node("RayCast3DRight")
@@ -29,7 +29,7 @@ func _apply_gravity(delta : float) -> void:
 		velocity.y -= _gravity * delta
 
 func _move(delta : float) -> void:
-	_path_follow_3d.progress += _SPEED * delta
+	path_follow_3d.progress += _SPEED * delta
 
 func _alert_player_emit(player : Player) -> void:
 	look_at(player.global_position, Vector3.UP, false)
