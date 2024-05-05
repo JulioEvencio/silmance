@@ -1,5 +1,8 @@
 extends Control
 
+func _ready() -> void:
+	Singleton.audio_menu_play()
+
 func _start() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/lore.tscn")
 

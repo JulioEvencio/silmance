@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://di6lfynpvebb0"]
+[gd_scene load_steps=22 format=3 uid="uid://di6lfynpvebb0"]
 
 [ext_resource type="Script" path="res://scripts/scenarios/mansion.gd" id="1_hav8x"]
+[ext_resource type="AudioStream" uid="uid://cjaxnmjp80tiu" path="res://assets/musics/game.wav" id="2_ospbr"]
 [ext_resource type="PackedScene" uid="uid://ct0nq8foxcjjy" path="res://scenes/grid_maps/floors.tscn" id="2_pbtsm"]
 [ext_resource type="PackedScene" uid="uid://b08rb04x8xnms" path="res://scenes/screens/pause.tscn" id="2_stnje"]
 [ext_resource type="PackedScene" uid="uid://1bl7g6k5isla" path="res://scenes/grid_maps/ceilings.tscn" id="3_1vu5i"]
@@ -64,6 +65,10 @@ script = ExtResource("1_hav8x")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d8s87")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ospbr")
+autoplay = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

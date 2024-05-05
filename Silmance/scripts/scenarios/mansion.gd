@@ -8,6 +8,7 @@ extends Node
 var _princess_can_spawn : bool = true
 
 func _ready() -> void:
+	Singleton.audio_menu_stop()
 	_interact_label.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1xo57oduawt3"]
+
+[ext_resource type="AudioStream" uid="uid://bmfgcjrhbhvfh" path="res://assets/musics/menu.wav" id="1_bifmh"]
+[ext_resource type="Script" path="res://scripts/singletons/singleton.gd" id="1_r0y4b"]
+
+[node name="Singleton" type="Node"]
+script = ExtResource("1_r0y4b")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_bifmh")
