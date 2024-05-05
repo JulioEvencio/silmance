@@ -15,7 +15,9 @@ var _camera_x_axis : float = 0.0
 var _camera_sensitivity : float = Save.data.camera_sensitivity / 100
 const _camera_acceleration : float = 5.0
 
-var _player_speed : float = 8.0
+var _player_speed : float = 3.0
+var _player_speed_base : float = 3.0
+var _player_speed_run : float = 3.0
 var _player_acceleration : float = 5.0
 
 var _princess : Princess = null
@@ -60,6 +62,11 @@ func _move(delta : float) -> void:
 	var direction_x : Vector3 = Input.get_axis("move_left", "move_right") * _head.basis.x
 	var direction_z : Vector3 = Input.get_axis("move_up", "move_down") * _head.basis.z
 	var direction : Vector3 = (direction_x + direction_z).normalized()
+	
+	if Input.is_action_pressed("run"):
+		_player_speed = _player_speed_base + _player_speed_run
+	else:
+		_player_speed = _player_speed_base
 	
 	velocity = velocity.lerp(direction * _player_speed + velocity.y * Vector3.UP, _player_acceleration * delta)
 
