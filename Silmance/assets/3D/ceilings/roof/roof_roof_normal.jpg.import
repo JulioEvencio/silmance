@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct1h8mc8fjilu"
+uid="uid://b4tphqcv7i0su"
 path.s3tc="res://.godot/imported/roof_roof_normal.jpg-a56fee56c8261698fd5e1cea2db3a92e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f93be25abfc94b4853800701d2d53cfd"
+"md5": "2c0a3d4a3a867ddea764d716bae23073"
 }
 
 [deps]
