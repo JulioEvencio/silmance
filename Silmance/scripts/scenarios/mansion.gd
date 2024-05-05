@@ -1,10 +1,13 @@
 extends Node
 
+@onready var _interact_label : Label = get_node("HUD/InteractLabel")
+@onready var _tutorial_label : Label = get_node("HUD/TutorialLabel")
 @onready var _princess : Princess = get_node("Node3D/Entities/Princess")
 
 var _princess_can_spawn : bool = true
 
 func _ready() -> void:
+	_interact_label.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(_event : InputEvent) -> void:
@@ -33,3 +36,12 @@ func _on_spwan_right_body_entered(_body : Player) -> void:
 
 func _on_spawn_left_body_entered(_body : Player) -> void:
 	_spawn_princess(16.0, -34.5)
+
+func _on_player__can_interact_with_princess() -> void:
+	_interact_label.show()
+
+func _on_player__can_not_interact_with_princess() -> void:
+	_interact_label.hide()
+
+func _on_tutorial_timer_timeout() -> void:
+	_tutorial_label.hide()

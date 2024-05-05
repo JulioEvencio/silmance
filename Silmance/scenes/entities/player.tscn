@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhhb800i2scdf"]
+[gd_scene load_steps=5 format=3 uid="uid://bhhb800i2scdf"]
 
 [ext_resource type="Script" path="res://scripts/entities/player.gd" id="1_rrpph"]
 [ext_resource type="Texture2D" uid="uid://bvyp3w3bkg08x" path="res://assets/2D/textures/flash_light.png" id="2_avaj2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qmyc5"]
+size = Vector3(1, 0.5, 1.5)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m46mr"]
 radius = 0.2
@@ -17,9 +20,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.599804, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
-target_position = Vector3(0, 0, -2)
+[node name="Area3D" type="Area3D" parent="Head/Camera3D"]
+collision_layer = 0
 collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0577878, -0.965731)
+shape = SubResource("BoxShape3D_qmyc5")
 
 [node name="Hand" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0173507, 0.59916, 0)
@@ -40,3 +47,6 @@ spot_angle = 15.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_m46mr")
+
+[connection signal="body_entered" from="Head/Camera3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Head/Camera3D/Area3D" to="." method="_on_area_3d_body_exited"]

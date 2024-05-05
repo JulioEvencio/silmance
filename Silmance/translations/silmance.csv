@@ -23,3 +23,5 @@ $_CAMERA_SENSITIVITY,Camera Sensitivity:,Sensibilidade da câmera:,Sensibilidad 
 $_VOLUME,Volume:,Volume:,Volumen:
 $_SAVE,Save,Salvar,Guardar
 $_CANCEL,Cancel,Cancelar,Cancelar
+$_INTERACT_WITH_THE_PRINCESS,Press E to call the princess,Pressione E para chamar a princesa,Pulsa E para llamar a la princesa
+$_TUTORIAL,Use WASD or the arrow keys to walk and shift to run,Use WASD ou as setas para andar e shift para correr,Utilice WASD o las teclas de flecha para caminar y shift para correr

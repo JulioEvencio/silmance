@@ -1,9 +1,11 @@
 extends CharacterBody3D
 class_name Player
 
+signal _can_interact_with_princess
+signal _can_not_interact_with_princess
+
 @onready var _head : Node3D = get_node("Head")
 @onready var _camera : Camera3D = get_node("Head/Camera3D")
-@onready var _ray_cast : RayCast3D = get_node("Head/Camera3D/RayCast3D")
 
 @onready var _hand : Node3D = get_node("Hand")
 @onready var _flash_light : SpotLight3D = get_node("Hand/FlashLight")
@@ -16,15 +18,15 @@ const _camera_acceleration : float = 5.0
 var _player_speed : float = 8.0
 var _player_acceleration : float = 5.0
 
+var _princess : Princess = null
+
 var _gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _input(event : InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		_camera_motion(event)
 	elif event is InputEventKey:
-		if Input.is_action_just_pressed("toggle_flash_light"):
-			_toggle_flash_light()
-		if Input.is_action_just_pressed("interact") and _ray_cast.is_colliding():
+		if Input.is_action_just_pressed("interact") and _princess != null:
 			_call_princess()
 
 func _physics_process(delta : float) -> void:
@@ -39,11 +41,8 @@ func _camera_motion(event : InputEventMouseMotion) -> void:
 	_camera_x_axis += event.relative.y * _camera_sensitivity
 	_camera_x_axis = clamp(_camera_x_axis, -90.0, 90.0)
 
-func _toggle_flash_light() -> void:
-	_flash_light.visible = false if _flash_light.visible else true
-
 func _call_princess() -> void:
-	_ray_cast.get_collider().to_follow_player()
+	_princess.to_follow_player()
 
 func _camera_motion_sleep(delta : float) -> void:
 	_head.rotation.y = lerp(_head.rotation.y, -deg_to_rad(_head_y_axis), _camera_acceleration * delta)
@@ -63,3 +62,11 @@ func _move(delta : float) -> void:
 	var direction : Vector3 = (direction_x + direction_z).normalized()
 	
 	velocity = velocity.lerp(direction * _player_speed + velocity.y * Vector3.UP, _player_acceleration * delta)
+
+func _on_area_3d_body_entered(body : Princess) -> void:
+	_princess = body
+	_can_interact_with_princess.emit()
+
+func _on_area_3d_body_exited(_body : Princess) -> void:
+	_princess = null
+	_can_not_interact_with_princess.emit()
