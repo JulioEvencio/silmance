@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://di6lfynpvebb0"]
+[gd_scene load_steps=21 format=3 uid="uid://di6lfynpvebb0"]
 
 [ext_resource type="Script" path="res://scripts/scenarios/mansion.gd" id="1_hav8x"]
 [ext_resource type="PackedScene" uid="uid://ct0nq8foxcjjy" path="res://scenes/grid_maps/floors.tscn" id="2_pbtsm"]
@@ -56,6 +56,9 @@ point_count = 5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_goxhx"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fear3"]
+size = Vector3(4.97394, 2.52649, 0.319214)
+
 [node name="Mansion" type="Node"]
 script = ExtResource("1_hav8x")
 
@@ -94,12 +97,12 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "$_TUTORIAL"
 
+[node name="Pause" parent="HUD" instance=ExtResource("2_stnje")]
+
 [node name="TutorialTimer" type="Timer" parent="HUD"]
 wait_time = 10.0
 one_shot = true
 autostart = true
-
-[node name="Pause" parent="HUD" instance=ExtResource("2_stnje")]
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -169,31 +172,39 @@ transform = Transform3D(0.999035, 0, 0.0439047, 0, 1, 0, -0.0439047, 0, 0.999035
 [node name="Silmance" parent="Node3D/Entities/Enemies/PathRightLower/PathFollow3D" node_paths=PackedStringArray("_path_follow_3d") instance=ExtResource("7_vgyar")]
 _path_follow_3d = NodePath("..")
 
-[node name="Areas3D" type="Node3D" parent="Node3D"]
+[node name="Detections" type="Node3D" parent="Node3D"]
 
-[node name="SpawnLeft" type="Area3D" parent="Node3D/Areas3D"]
+[node name="SpawnLeft" type="Area3D" parent="Node3D/Detections"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -27.5223, 1, -8.166)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Areas3D/SpawnLeft"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Detections/SpawnLeft"]
 shape = SubResource("BoxShape3D_hp4oh")
 
-[node name="SpwanRight" type="Area3D" parent="Node3D/Areas3D"]
+[node name="SpwanRight" type="Area3D" parent="Node3D/Detections"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.5615, 1, -34.4807)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Areas3D/SpwanRight"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Detections/SpwanRight"]
 shape = SubResource("BoxShape3D_82v1c")
 
-[node name="VictoryArea" type="Area3D" parent="Node3D/Areas3D"]
+[node name="VictoryArea" type="Area3D" parent="Node3D/Detections"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.257902, 1, -1.3916)
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Areas3D/VictoryArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Detections/VictoryArea"]
 shape = SubResource("BoxShape3D_goxhx")
+
+[node name="Block" type="StaticBody3D" parent="Node3D/Detections"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.43143)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Detections/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485382, 0.190979, -0.022644)
+shape = SubResource("BoxShape3D_fear3")
 
 [connection signal="timeout" from="HUD/TutorialTimer" to="." method="_on_tutorial_timer_timeout"]
 [connection signal="_can_interact_with_princess" from="Node3D/Entities/Player" to="." method="_on_player__can_interact_with_princess"]
@@ -202,6 +213,6 @@ shape = SubResource("BoxShape3D_goxhx")
 [connection signal="gamer_over" from="Node3D/Entities/Enemies/PathLeft/PathFollow3D/Silmance" to="." method="_on_silmance_gamer_over"]
 [connection signal="gamer_over" from="Node3D/Entities/Enemies/PathRightTop/PathFollow3D/Silmance" to="." method="_on_silmance_gamer_over"]
 [connection signal="gamer_over" from="Node3D/Entities/Enemies/PathRightLower/PathFollow3D/Silmance" to="." method="_on_silmance_gamer_over"]
-[connection signal="body_entered" from="Node3D/Areas3D/SpawnLeft" to="." method="_on_spawn_left_body_entered"]
-[connection signal="body_entered" from="Node3D/Areas3D/SpwanRight" to="." method="_on_spwan_right_body_entered"]
-[connection signal="body_entered" from="Node3D/Areas3D/VictoryArea" to="." method="_on_victory_area_body_entered"]
+[connection signal="body_entered" from="Node3D/Detections/SpawnLeft" to="." method="_on_spawn_left_body_entered"]
+[connection signal="body_entered" from="Node3D/Detections/SpwanRight" to="." method="_on_spwan_right_body_entered"]
+[connection signal="body_entered" from="Node3D/Detections/VictoryArea" to="." method="_on_victory_area_body_entered"]
