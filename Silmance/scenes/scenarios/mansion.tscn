@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://di6lfynpvebb0"]
+[gd_scene load_steps=14 format=3 uid="uid://di6lfynpvebb0"]
 
 [ext_resource type="Script" path="res://scripts/scenarios/mansion.gd" id="1_hav8x"]
 [ext_resource type="PackedScene" uid="uid://ct0nq8foxcjjy" path="res://scenes/grid_maps/floors.tscn" id="2_pbtsm"]
@@ -29,6 +29,8 @@ polygons = [PackedInt32Array(2, 1, 3), PackedInt32Array(3, 1, 0), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_hp4oh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_82v1c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_goxhx"]
 
 [node name="Mansion" type="Node"]
 script = ExtResource("1_hav8x")
@@ -103,26 +105,35 @@ data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.8, -34.5)
 player = NodePath("../Player")
 
-[node name="SpawnArea" type="Node3D" parent="Node3D"]
+[node name="Areas3D" type="Node3D" parent="Node3D"]
 
-[node name="SpawnLeft" type="Area3D" parent="Node3D/SpawnArea"]
+[node name="SpawnLeft" type="Area3D" parent="Node3D/Areas3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -27.5223, 1, -8.166)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/SpawnArea/SpawnLeft"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Areas3D/SpawnLeft"]
 shape = SubResource("BoxShape3D_hp4oh")
 
-[node name="SpwanRight" type="Area3D" parent="Node3D/SpawnArea"]
+[node name="SpwanRight" type="Area3D" parent="Node3D/Areas3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.5615, 1, -34.4807)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/SpawnArea/SpwanRight"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Areas3D/SpwanRight"]
 shape = SubResource("BoxShape3D_82v1c")
+
+[node name="VictoryArea" type="Area3D" parent="Node3D/Areas3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.257902, 1, -1.3916)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Areas3D/VictoryArea"]
+shape = SubResource("BoxShape3D_goxhx")
 
 [connection signal="timeout" from="HUD/TutorialTimer" to="." method="_on_tutorial_timer_timeout"]
 [connection signal="_can_interact_with_princess" from="Node3D/Entities/Player" to="." method="_on_player__can_interact_with_princess"]
 [connection signal="_can_not_interact_with_princess" from="Node3D/Entities/Player" to="." method="_on_player__can_not_interact_with_princess"]
-[connection signal="body_entered" from="Node3D/SpawnArea/SpawnLeft" to="." method="_on_spawn_left_body_entered"]
-[connection signal="body_entered" from="Node3D/SpawnArea/SpwanRight" to="." method="_on_spwan_right_body_entered"]
+[connection signal="body_entered" from="Node3D/Areas3D/SpawnLeft" to="." method="_on_spawn_left_body_entered"]
+[connection signal="body_entered" from="Node3D/Areas3D/SpwanRight" to="." method="_on_spwan_right_body_entered"]
+[connection signal="body_entered" from="Node3D/Areas3D/VictoryArea" to="." method="_on_victory_area_body_entered"]

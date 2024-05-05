@@ -17,6 +17,10 @@ func _unhandled_input(_event : InputEvent) -> void:
 func _quit() -> void:
 	get_tree().quit()
 
+func _victory() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene_to_file("res://scenes/screens/victory.tscn")
+
 func _game_over() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://scenes/screens/menu.tscn")
@@ -45,3 +49,6 @@ func _on_player__can_not_interact_with_princess() -> void:
 
 func _on_tutorial_timer_timeout() -> void:
 	_tutorial_label.hide()
+
+func _on_victory_area_body_entered(_body : Princess) -> void:
+	Transition.start(func(): _victory())
