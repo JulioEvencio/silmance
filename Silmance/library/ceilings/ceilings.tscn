@@ -1,21 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsc288ovia1wa"]
+[gd_scene load_steps=5 format=3 uid="uid://bsc288ovia1wa"]
 
-[ext_resource type="Texture2D" uid="uid://dnylrpp4f8h03" path="res://assets/3D/ceilings/roof/roof_roof.jpg" id="1_pwenw"]
-[ext_resource type="Texture2D" uid="uid://cxoyphhb1mtny" path="res://assets/3D/ceilings/roof/roof_roof_roughness.png" id="2_smm8x"]
-[ext_resource type="Texture2D" uid="uid://b4tphqcv7i0su" path="res://assets/3D/ceilings/roof/roof_roof_normal.jpg" id="3_en51y"]
+[ext_resource type="Texture2D" uid="uid://cqdfrpvkvubco" path="res://assets/3D/ceilings/roof/roof_Tile_02-128x128.png" id="1_ltmyk"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4xvg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4spgp"]
 resource_name = "Roof"
 cull_mode = 2
-albedo_texture = ExtResource("1_pwenw")
-metallic_texture = ExtResource("2_smm8x")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("2_smm8x")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("3_en51y")
+albedo_texture = ExtResource("1_ltmyk")
+roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_625s1"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_nnd6w"]
 _surfaces = [{
 "aabb": AABB(-0.5, 2.5, -0.5, 1, 0.2, 1.00001),
 "format": 34896613377,
@@ -29,28 +22,28 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wo0h3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_eedm2"]
 resource_name = "roof_Roof"
 _surfaces = [{
 "aabb": AABB(-0.5, 2.5, -0.5, 1, 0.2, 1.00001),
-"attribute_data": PackedByteArray(255, 127, 203, 204, 255, 127, 255, 255, 50, 179, 255, 127, 255, 127, 50, 179, 255, 127, 255, 255, 204, 204, 255, 127, 255, 127, 203, 204, 255, 127, 255, 127, 50, 179, 254, 255, 255, 127, 50, 179, 255, 127, 255, 127, 204, 204, 254, 255, 255, 255, 203, 204, 255, 255, 255, 255, 50, 179, 255, 127, 255, 255, 50, 179, 255, 255, 255, 255, 204, 204, 255, 127, 255, 255, 203, 204, 255, 255, 255, 127, 50, 179, 254, 255, 255, 255, 50, 179, 255, 255, 255, 127, 204, 204, 254, 255),
+"attribute_data": PackedByteArray(0, 0, 152, 153, 0, 0, 255, 255, 0, 0, 152, 153, 0, 0, 101, 102, 0, 0, 255, 255, 0, 0, 101, 102, 0, 0, 152, 153, 0, 0, 0, 0, 255, 255, 152, 153, 0, 0, 101, 102, 0, 0, 0, 0, 255, 255, 101, 102, 255, 255, 152, 153, 255, 255, 255, 255, 0, 0, 152, 153, 255, 255, 101, 102, 255, 255, 255, 255, 0, 0, 101, 102, 255, 255, 152, 153, 255, 255, 0, 0, 255, 255, 152, 153, 255, 255, 101, 102, 255, 255, 0, 0, 255, 255, 101, 102),
 "format": 34896613399,
 "index_count": 36,
 "index_data": PackedByteArray(2, 0, 11, 0, 5, 0, 2, 0, 8, 0, 11, 0, 6, 0, 21, 0, 9, 0, 6, 0, 18, 0, 21, 0, 20, 0, 17, 0, 23, 0, 20, 0, 14, 0, 17, 0, 12, 0, 3, 0, 15, 0, 12, 0, 0, 0, 3, 0, 7, 0, 13, 0, 19, 0, 7, 0, 1, 0, 13, 0, 22, 0, 4, 0, 10, 0, 22, 0, 16, 0, 4, 0),
-"material": SubResource("StandardMaterial3D_j4xvg"),
+"material": SubResource("StandardMaterial3D_4spgp"),
 "name": "Roof",
 "primitive": 3,
-"uv_scale": Vector4(2, 2, 0, 0),
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 128, 0, 0, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 254, 255, 170, 42, 0, 0, 255, 255, 254, 255, 0, 128, 0, 0, 255, 255, 254, 255, 255, 191, 0, 0, 255, 255, 254, 255, 170, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 63, 0, 0, 0, 0, 0, 0, 170, 42, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 191, 0, 0, 255, 255, 0, 0, 170, 42, 255, 255, 0, 0, 254, 255, 0, 128, 255, 255, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 84, 213, 255, 255, 255, 255, 254, 255, 0, 128, 255, 255, 255, 255, 254, 255, 255, 191, 255, 255, 255, 255, 254, 255, 84, 213, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 84, 213, 255, 127, 255, 255, 0, 0, 255, 127, 84, 213, 84, 213, 255, 127, 255, 255, 255, 255, 255, 127, 84, 213, 84, 213, 255, 255, 255, 127, 0, 0, 255, 127, 84, 213, 84, 213, 255, 255, 255, 127, 255, 255, 255, 127, 84, 213, 84, 213, 255, 127, 255, 255, 0, 0, 255, 127, 170, 42, 170, 42, 255, 127, 255, 255, 255, 255, 255, 127, 170, 42, 170, 42, 255, 255, 255, 127, 0, 0, 255, 127, 170, 42, 170, 42, 255, 255, 255, 127, 255, 255, 255, 127, 170, 42, 170, 42)
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 128, 0, 0, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 255, 255, 254, 255, 0, 128, 0, 0, 255, 255, 254, 255, 255, 191, 0, 0, 255, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 191, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 254, 255, 0, 128, 255, 255, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 191, 255, 255, 255, 255, 254, 255, 0, 128, 255, 255, 255, 255, 254, 255, 255, 191, 255, 255, 255, 255, 254, 255, 255, 191, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 127, 255, 255, 0, 0, 255, 127, 255, 63, 255, 127, 255, 127, 255, 255, 255, 255, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 63, 255, 127, 255, 127, 255, 255, 0, 0, 255, 127, 255, 127, 0, 0, 255, 127, 255, 255, 255, 255, 255, 127, 255, 127, 0, 0, 255, 255, 255, 127, 0, 0, 255, 127, 255, 127, 0, 0, 255, 255, 255, 127, 255, 255, 255, 127, 255, 127, 0, 0)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_625s1")
+shadow_mesh = SubResource("ArrayMesh_nnd6w")
 
 [node name="Ceilings" type="Node3D"]
 
 [node name="roof" type="Node3D" parent="."]
 
 [node name="Roof" type="MeshInstance3D" parent="roof"]
-mesh = SubResource("ArrayMesh_wo0h3")
+mesh = SubResource("ArrayMesh_eedm2")
 skeleton = NodePath("")
