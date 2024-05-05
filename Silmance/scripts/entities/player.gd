@@ -5,7 +5,7 @@ signal _can_interact_with_princess
 signal _can_not_interact_with_princess
 
 @onready var _head : Node3D = get_node("Head")
-@onready var _camera : Camera3D = get_node("Head/Camera3D")
+@onready var camera : Camera3D = get_node("Head/Camera3D")
 
 @onready var _hand : Node3D = get_node("Hand")
 @onready var _flash_light : SpotLight3D = get_node("Hand/FlashLight")
@@ -48,7 +48,7 @@ func _call_princess() -> void:
 
 func _camera_motion_sleep(delta : float) -> void:
 	_head.rotation.y = lerp(_head.rotation.y, -deg_to_rad(_head_y_axis), _camera_acceleration * delta)
-	_camera.rotation.x = lerp(_camera.rotation.x, -deg_to_rad(_camera_x_axis), _camera_acceleration * delta)
+	camera.rotation.x = lerp(camera.rotation.x, -deg_to_rad(_camera_x_axis), _camera_acceleration * delta)
 
 func _flash_light_motion() -> void:
 	_hand.rotation.y = -deg_to_rad(_head_y_axis)

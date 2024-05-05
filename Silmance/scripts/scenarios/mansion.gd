@@ -3,6 +3,7 @@ extends Node
 @onready var _interact_label : Label = get_node("HUD/InteractLabel")
 @onready var _tutorial_label : Label = get_node("HUD/TutorialLabel")
 @onready var _princess : Princess = get_node("Node3D/Entities/Princess")
+@onready var _enemies_timer : Timer = get_node("Node3D/Entities/Enemies/EnemiesTimer")
 
 var _princess_can_spawn : bool = true
 
@@ -24,10 +25,6 @@ func _victory() -> void:
 func _game_over() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://scenes/screens/menu.tscn")
-
-func _on_enemy_gamer_over():
-	# Transition.start(func(): _game_over())
-	pass
 
 func _spawn_princess(x : float, z : float) -> void:
 	if _princess_can_spawn:
@@ -52,3 +49,9 @@ func _on_tutorial_timer_timeout() -> void:
 
 func _on_victory_area_body_entered(_body : Princess) -> void:
 	Transition.start(func(): _victory())
+
+func _on_silmance_gamer_over() -> void:
+	_enemies_timer.start()
+
+func _on_enemies_timer_timeout() -> void:
+	Transition.start(func(): _game_over())
