@@ -1,7 +1,7 @@
 extends Control
 
 func _start() -> void:
-	get_tree().change_scene_to_file("res://scenes/scenarios/mansion.tscn")
+	get_tree().change_scene_to_file("res://scenes/screens/lore.tscn")
 
 func _settings() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/settings.tscn")
