@@ -32,6 +32,7 @@ func _move(delta : float) -> void:
 	_path_follow_3d.progress += _SPEED * delta
 
 func _alert_player_emit(player : Player) -> void:
+	look_at(player.global_position, Vector3.UP, false)
 	_can_move = false
 	_animation_player.play("idle")
 	player.set_physics_process(false)
