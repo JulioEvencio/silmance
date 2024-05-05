@@ -6,7 +6,6 @@ var data : Dictionary = {
 	"default": true,
 	"language": "en",
 	"camera_sensitivity": 25.0,
-	"volume": 50.0
 }
 
 func _ready() -> void:

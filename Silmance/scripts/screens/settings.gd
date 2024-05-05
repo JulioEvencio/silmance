@@ -5,9 +5,6 @@ extends Control
 @onready var _camera_label : Label = get_node("VBoxContainer/Camera/Value")
 @onready var _camera_slider : Slider = get_node("VBoxContainer/Camera/CameraSlider")
 
-@onready var _volume_label : Label = get_node("VBoxContainer/Volume/Value")
-@onready var _volume_slider : Slider = get_node("VBoxContainer/Volume/VolumeSlider")
-
 func _ready() -> void:
 	match Save.data.language:
 		"en":
@@ -21,9 +18,6 @@ func _ready() -> void:
 	
 	_camera_slider.value = Save.data.camera_sensitivity
 	_show_value(_camera_label, int(_camera_slider.value))
-	
-	_volume_slider.value = Save.data.volume
-	_show_value(_volume_label, int(_volume_slider.value))
 
 func _show_value(label : Label, value : int) -> void:
 	if value == 100:
@@ -46,7 +40,6 @@ func _save() -> void:
 			Save.data.language = "es"
 
 	Save.data.camera_sensitivity = _camera_slider.value
-	Save.data.volume = _volume_slider.value
 	Save.save_game()
 	
 	TranslationServer.set_locale(Save.data.language)
@@ -58,9 +51,6 @@ func _cancel() -> void:
 
 func _on_camera_slider_value_changed(value : float) -> void:
 	_show_value(_camera_label, int(value))
-
-func _on_volume_slider_value_changed(value : float) -> void:
-	_show_value(_volume_label, int(value))
 
 func _on_save_pressed() -> void:
 	Transition.start(func(): _save())
