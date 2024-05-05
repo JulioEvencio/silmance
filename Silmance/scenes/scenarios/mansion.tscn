@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://di6lfynpvebb0"]
+[gd_scene load_steps=19 format=3 uid="uid://di6lfynpvebb0"]
 
 [ext_resource type="Script" path="res://scripts/scenarios/mansion.gd" id="1_hav8x"]
 [ext_resource type="PackedScene" uid="uid://ct0nq8foxcjjy" path="res://scenes/grid_maps/floors.tscn" id="2_pbtsm"]
+[ext_resource type="PackedScene" uid="uid://b08rb04x8xnms" path="res://scenes/screens/pause.tscn" id="2_stnje"]
 [ext_resource type="PackedScene" uid="uid://bapj2ldggd4mt" path="res://scenes/grid_maps/furnitures.tscn" id="3_iv2i2"]
 [ext_resource type="PackedScene" uid="uid://iayyenw7tkyj" path="res://scenes/grid_maps/structures.tscn" id="4_arqnw"]
 [ext_resource type="PackedScene" uid="uid://bhhb800i2scdf" path="res://scenes/entities/player.tscn" id="5_yehql"]
@@ -97,6 +98,8 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[node name="Pause" parent="HUD" instance=ExtResource("2_stnje")]
+
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="GridMaps" type="Node3D" parent="Node3D"]
@@ -137,7 +140,7 @@ one_shot = true
 curve = SubResource("Curve3D_whd22")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Entities/Enemies/PathLeft"]
-transform = Transform3D(-0.00688063, 0, -0.999976, 0, 1, 0, 0.999976, 0, -0.00688063, -27.1347, 0, -35.826)
+transform = Transform3D(-0.00688122, 0, -0.999976, 0, 1, 0, 0.999976, 0, -0.00688122, -27.1347, 0, -35.826)
 
 [node name="Silmance" parent="Node3D/Entities/Enemies/PathLeft/PathFollow3D" node_paths=PackedStringArray("_path_follow_3d") instance=ExtResource("7_vgyar")]
 _path_follow_3d = NodePath("..")
@@ -146,7 +149,7 @@ _path_follow_3d = NodePath("..")
 curve = SubResource("Curve3D_3d2la")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Entities/Enemies/PathRightTop"]
-transform = Transform3D(0.00478452, 0, 0.999989, 0, 1, 0, -0.999989, 0, 0.00478452, 22.5641, 0, -27.7318)
+transform = Transform3D(0.00478512, 0, 0.999989, 0, 1, 0, -0.999989, 0, 0.00478512, 22.5641, 0, -27.7318)
 
 [node name="Silmance" parent="Node3D/Entities/Enemies/PathRightTop/PathFollow3D" node_paths=PackedStringArray("_path_follow_3d") instance=ExtResource("7_vgyar")]
 _path_follow_3d = NodePath("..")
@@ -155,7 +158,7 @@ _path_follow_3d = NodePath("..")
 curve = SubResource("Curve3D_fkek4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Node3D/Entities/Enemies/PathRightLower"]
-transform = Transform3D(0.999035, 0, 0.0439136, 0, 1, 0, -0.0439136, 0, 0.999035, 15.4962, 0, -4.54136)
+transform = Transform3D(0.999035, 0, 0.0439047, 0, 1, 0, -0.0439047, 0, 0.999035, 15.4962, 0, -4.54136)
 
 [node name="Silmance" parent="Node3D/Entities/Enemies/PathRightLower/PathFollow3D" node_paths=PackedStringArray("_path_follow_3d") instance=ExtResource("7_vgyar")]
 _path_follow_3d = NodePath("..")

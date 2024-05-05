@@ -11,13 +11,6 @@ func _ready() -> void:
 	_interact_label.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _unhandled_input(_event : InputEvent) -> void:
-	if Input.is_action_just_pressed("escape"):
-		call_deferred("_quit")
-
-func _quit() -> void:
-	get_tree().quit()
-
 func _victory() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://scenes/screens/victory.tscn")
