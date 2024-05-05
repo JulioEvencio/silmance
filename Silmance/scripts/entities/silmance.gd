@@ -8,7 +8,7 @@ signal gamer_over
 @onready var _ray_cast_3d_center : RayCast3D = get_node("RayCast3DCenter")
 @onready var _ray_cast_3d_right : RayCast3D = get_node("RayCast3DRight")
 @onready var _ray_cast_3d_left : RayCast3D = get_node("RayCast3DLeft")
-@onready var _animation_player : AnimationPlayer = get_node("silmance/AnimationPlayer")
+@onready var _animation_player : AnimationPlayer = get_node("Silmance/AnimationPlayer")
 
 const _SPEED : float = 1.0
 
