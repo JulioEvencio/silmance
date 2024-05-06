@@ -6,8 +6,6 @@ A suspense game where the objective is to rescue the princess
 
 Click [here](https://julio-igreja.itch.io/silmance) to play the game
 
-Click [here](https://www.youtube.com/watch?v=EgEcnlx7huw) to watch the game demonstration video
-
 ## How to run
 
 This project was made in [Godot](https://godotengine.org), just import the **"project.godot"** file
