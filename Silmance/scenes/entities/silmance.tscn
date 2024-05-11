@@ -486,18 +486,17 @@ script = ExtResource("1_t877v")
 shape = SubResource("CapsuleShape3D_ee5an")
 
 [node name="RayCast3DCenter" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-target_position = Vector3(0, 0, -13)
+target_position = Vector3(0, 0, -10)
 collision_mask = 3
 
 [node name="RayCast3DRight" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.377517, 0, 3)
-target_position = Vector3(0, 0, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.377517, 0, 0)
+target_position = Vector3(0, 0, -10)
 collision_mask = 3
 
 [node name="RayCast3DLeft" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.391265, 0, 3)
-target_position = Vector3(0, 0, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.391265, 0, 0)
+target_position = Vector3(0, 0, -10)
 collision_mask = 3
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
