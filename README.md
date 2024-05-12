@@ -1,6 +1,6 @@
 # Silmance
 
-A suspense game where the objective is to rescue the princess
+Silmance is a game made for [GGJAM - Retro Game Jam](https://itch.io/jam/ggjam-retro) where the objective is to rescue the princess
 
 ## Links
 
